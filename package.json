@@ -1,0 +1,25 @@
+{
+  "name": "socketty",
+  "version": "0.1.0",
+  "description": "Server side socketty, based on ws",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nax/socketty-node.git"
+  },
+  "keywords": [
+    "websockets"
+  ],
+  "author": "Nax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nax/socketty-node/issues"
+  },
+  "homepage": "https://github.com/Nax/socketty-node#readme",
+  "dependencies": {
+    "ws": "^0.8.1"
+  }
+}

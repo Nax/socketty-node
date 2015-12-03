@@ -1,6 +1,6 @@
 {
   "name": "socketty",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Server side socketty, based on ws",
   "main": "src/index.js",
   "scripts": {

@@ -20,7 +20,7 @@ function Socket (ws) {
     };
 
     this.disconnect = function (callback) {
-        that._socket.on('disconnect', callback);
+        that._socket.onclose = callback;
     };
 
     ws.on('message', function (msg) {

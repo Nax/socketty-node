@@ -64,7 +64,7 @@ var wsServer = socketty.createServer(server);
 
 server.listen(8080);
 
-wsServer.connect(function (socket) {
+wsServer.connection(function (socket) {
     console.log('New client');
     socket.send('hello', 'Hello client!');
 

@@ -22,22 +22,27 @@ var CommonSocket = function (ws) {
         that._disconnect = callback;
     };
 
-    ws.onmessage = function (msg) {
-        if (msg === 'ping') {
+    ws.onmessage = function (msgEvent) {
+        var rawMsg = msgEvent.data;
+
+        if (rawMsg === 'ping') {
             that._socket.send('pong');
             return;
         }
-        if (msg === 'pong') {
+        if (rawMsg === 'pong') {
             return;
         }
+        try {
+            var data = JSON.parse(rawMsg);
+            var action = data.action;
+            var msg = data.msg;
 
-        var data = JSON.parse(msg);
-        var action = data.action;
-        var msg = data.msg;
-
-        var h = that._handle[action];
-        if (h) {
-            h(msg);
+            var h = that._handle[action];
+            if (h) {
+                h(msg);
+            }
+        } catch (e) {
+            
         }
     };
 

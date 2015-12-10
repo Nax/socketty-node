@@ -1,7 +1,7 @@
 'use strict';
 
 var WebSocketServer     = require('ws').Server;
-var ServerSocket        = require('../common');
+var ServerSocket        = require('./common');
 
 function Server (httpServer) {
     var that = this;

@@ -1,5 +1,9 @@
 'use strict';
 
+var client      = require('./client');
+var server      = require('./server');
+
 module.exports = {
-    Server: require('./server')
+    connect: client.connect,
+    createServer: server.createServer
 };

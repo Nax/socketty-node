@@ -1,10 +1,11 @@
 {
   "name": "socketty",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Server side socketty, based on ws",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./build.sh"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,10 @@
   "homepage": "https://github.com/Nax/socketty-node#readme",
   "dependencies": {
     "ws": "^0.8.1"
+  },
+  "browser": "src/client.js",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "uglify": "^0.1.5"
   }
 }

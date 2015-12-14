@@ -32,17 +32,18 @@ var CommonSocket = function (ws) {
         if (rawMsg === 'pong') {
             return;
         }
+        var data = null;
         try {
-            var data = JSON.parse(rawMsg);
-            var action = data.action;
-            var msg = data.msg;
-
-            var h = that._handle[action];
-            if (h) {
-                h(msg);
-            }
+            data = JSON.parse(rawMsg);
         } catch (e) {
-            
+            return;
+        }
+        var action = data.action;
+        var msg = data.msg;
+
+        var h = that._handle[action];
+        if (h) {
+            h(msg);
         }
     };
 
